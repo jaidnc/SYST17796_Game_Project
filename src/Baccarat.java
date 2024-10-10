@@ -9,8 +9,8 @@ public class Baccarat {
             String bet = input.nextLine().toLowerCase();
 
             // Array to represent a hand of 2 cards
-            Card[] playerHand = new Card[2];  // Assuming you have a Card class
-            Card[] bankerHand = new Card[2];  // Assuming you have a Card class 
+            Card[] playerHand = new Card[2];  
+            Card[] bankerHand = new Card[2];  
 
             // Genereate random cards for players hand  
             for (int i = 0; i < playerHand.length; i++) {
@@ -39,7 +39,7 @@ public class Baccarat {
 
             input.close();
     }
-    
+
 }
 
 

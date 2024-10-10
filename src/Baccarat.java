@@ -37,7 +37,7 @@ public class Baccarat {
         
             System.out.println("You bet on: "+(bet.equals("player") ? "Player" : "Banker"));
 
-            input.close();
+            input.close(); // Closes scanner
     }
 
 }

@@ -5,7 +5,7 @@ public class Baccarat {
     public static void main (String [] arg){
             Scanner input = new Scanner(System.in);
 
-            System.out.println("Please select either 'Player' or 'Banker' for your bet: ");
+            System.out.println("Please type either 'Player' or 'Banker' to place your bet: ");
             String bet = input.nextLine().toLowerCase();
 
             // Array to represent a hand of 2 cards

@@ -1,45 +1,31 @@
 import java.util.Scanner;
 
 public class Baccarat {
-  
-    public static void main (String [] arg){
-            Scanner input = new Scanner(System.in);
 
-            System.out.println("Please type either 'Player' or 'Banker' to place your bet: ");
-            String bet = input.nextLine().toLowerCase();
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        GameLogic gameLogic = new GameLogic();
 
-            // Array to represent a hand of 2 cards
-            Card[] playerHand = new Card[2];  
-            Card[] bankerHand = new Card[2];  
+        System.out.println("Welcome to the Baccarat game! \nIt's a best to 5 game! \nEither you win 3 times, or the banker wins 3 times.");
 
-            // Genereate random cards for players hand  
-            for (int i = 0; i < playerHand.length; i++) {
-                int cardValue = (int) (Math.random() * 13 + 1);  
-                playerHand[i] = new Card(cardValue);  
+        // Main game loop
+        while (!gameLogic.isGameOver()) {
+            System.out.println("\nStarting new round...");
+            boolean result = gameLogic.playRound(input);
+
+            if (!result) {
+                System.out.print("\nWould you like to play another round? (yes/no): ");
+                String response = input.nextLine().toLowerCase();
+                if (!response.equals("yes")) {
+                    System.out.println("Thanks for playing! Exiting the game...");
+                    break;
+                }
             }
+        }
 
-            // Generate random cards for bankers hand
-            for (int i = 0; i < bankerHand.length; i++) {
-                int cardValue = (int) (Math.random() * 13 + 1);  
-                bankerHand[i] = new Card(cardValue);  
-            }
-    
-            // Print the generated hand for testing purposes
-            System.out.println("Player hand is: ");
-            for (Card card : playerHand) {
-                System.out.println(card);
-            }
-            
-            System.out.println("Banker hand is: ");
-            for (Card card : bankerHand) {
-                System.out.println(card);
-            }
-        
-            System.out.println("You bet on: "+(bet.equals("player") ? "Player" : "Banker"));
-
-            input.close(); // Closes scanner
+        // Print the final results after the game ends
+        gameLogic.printFinalResults();
+        input.close();
     }
-
 }
-
 

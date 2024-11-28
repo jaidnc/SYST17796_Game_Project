@@ -20,4 +20,13 @@ public class Card {
     public String toString() {
         return value == 0 ? "Face Card" : String.valueOf(value);
     }
+
+        // Determine if a third card is needed
+    public static boolean needsThirdCard(int score, boolean isPlayer) {
+        if (isPlayer) {
+            return score >= 0 && score <= 5; // Player draws if score is 0-5
+        } else {
+            return score >= 0 && score <= 2; // Banker draws if score is 0-2
+        }
+    }
 }

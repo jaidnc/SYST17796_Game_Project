@@ -6,7 +6,7 @@ public class Baccarat {
         Scanner input = new Scanner(System.in);
         GameLogic gameLogic = new GameLogic();
 
-        System.out.println("Welcome to the Baccarat game! \nIt's a best to 5 game! \nEither you win 3 times, or the banker wins 3 times.");
+        System.out.println("Welcome to the Baccarat game! \nIt's a best of 5 game! \nEither you win 3 times, or the banker wins 3 times.");
 
         // Main game loop
         while (!gameLogic.isGameOver()) {
